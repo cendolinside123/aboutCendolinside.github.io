@@ -28,7 +28,7 @@ url: "https://cendolinside123.github.io" # the base hostname & protocol for your
 github_username:  cendolinside123
 
 # Build settings
-remote_theme: jekyll-theme-cayman
+remote_theme: jekyll-theme-minimal
 plugins:
   - jekyll-feed
 

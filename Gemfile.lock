@@ -227,8 +227,6 @@ GEM
     multipart-post (2.1.1)
     nokogiri (1.12.4-arm64-darwin)
       racc (~> 1.4)
-    nokogiri (1.12.4-x86_64-darwin)
-      racc (~> 1.4)
     octokit (4.21.0)
       faraday (>= 0.9)
       sawyer (~> 0.8.0, >= 0.5.3)
@@ -276,7 +274,7 @@ DEPENDENCIES
   github-pages (~> 219)
   jekyll (~> 3.9.0)
   jekyll-feed (~> 0.12)
-  minima (~> 2.5)
+  jekyll-theme-minimal
   tzinfo (~> 1.2)
   tzinfo-data
   wdm (~> 0.1.1)
