@@ -53,6 +53,7 @@ plugins:
 #   - vendor/ruby/
 exclude:
   - js/
+  - css/
 domain: cendolinside123.github.io
 url: https://cendolinside123.github.io/
 baseurl: /cendolinside123.github.io/
