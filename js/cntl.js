@@ -1,5 +1,5 @@
 var app = angular.module('allCntl', ['ngRoute']);
-app.config(function($routeProvider) {
+app.config(function($routeProvider,$locationProvider,$httpProvider) {
     $routeProvider
     .when("/", {
       title: "/",
