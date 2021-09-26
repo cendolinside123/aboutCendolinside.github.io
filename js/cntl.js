@@ -15,3 +15,6 @@ app.config(function($routeProvider,$locationProvider,$httpProvider) {
     $locationProvider.html5Mode(true);
     $locationProvider.hashPrefix("!");
 });
+app.controller('ngengTitle',function($scope, $location) {
+  $scope.title = $location.path()
+})
