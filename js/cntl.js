@@ -10,7 +10,7 @@ app.config(function($routeProvider,$locationProvider,$httpProvider) {
     })
     .when("/404", {
       title: "/404 LOL what're you expect?",
-      templateUrl: "404.html"
+      templateUrl: "pages/404.html"
     }).otherwise({redirectTo: '/404'});
     $locationProvider.html5Mode(true);
     $locationProvider.hashPrefix("!");
