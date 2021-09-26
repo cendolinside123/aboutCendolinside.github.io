@@ -2,9 +2,9 @@ var app = angular.module('allCntl', ['ngRoute']);
 app.config(function($routeProvider) {
     $routeProvider
     .when("/", {
-      templateUrl : "index.html"
+      templateUrl : "pages/home.html"
     }).when("/AMe", {
-      templateUrl : "aboutMe.html"
+      templateUrl : "pages/aboutMe.html"
     })
     .when("/404", {
       templateUrl : "404.html"
