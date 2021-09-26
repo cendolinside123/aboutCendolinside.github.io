@@ -2,12 +2,15 @@ var app = angular.module('allCntl', ['ngRoute']);
 app.config(function($routeProvider) {
     $routeProvider
     .when("/", {
-      templateUrl : "pages/home.html"
+      title: "/",
+      templateUrl: "pages/home.html"
     }).when("/AMe", {
-      templateUrl : "pages/aboutMe.html"
+      title: "/AMe",
+      templateUrl: "pages/aboutMe.html"
     })
     .when("/404", {
-      templateUrl : "404.html"
+      title: "/404 LOL what're you expect?",
+      templateUrl: "404.html"
     }).otherwise({redirectTo: '/404'});
     $locationProvider.html5Mode(true)
     $locationProvider.hashPrefix("!");
