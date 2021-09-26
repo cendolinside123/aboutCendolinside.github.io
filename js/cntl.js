@@ -15,6 +15,29 @@ app.config(function($routeProvider,$locationProvider,$httpProvider) {
     $locationProvider.html5Mode(true);
     $locationProvider.hashPrefix("!");
 });
+app.controller('headerController',function($scope,$window,$location) {
+  var screenWidth = $window.innerWidth;
+  $scope.includeDesktopTemplate = true;
+  $scope.includeMobileTemplate = false;
+  if (screenWidth < 700){
+      $scope.includeMobileTemplate = true;
+      $scope.includeDesktopTemplate = false
+  }else{
+      $scope.includeDesktopTemplate = true;
+      $scope.includeMobileTemplate = false;
+  }
+
+  $scope.update = function() {
+    if ($scope.selectPage == "/") {
+      $location.path("/")
+    } else if ($scope.selectPage == "AMe") {
+      $location.path("/AMe")
+    } else {
+      $location.path("/404")
+    }
+ }
+
+})
 // app.controller('ngengTitle',function($scope, $location) {
 //   $scope.title = $location.path()
 // })
