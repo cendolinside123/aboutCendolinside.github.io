@@ -18,3 +18,12 @@ app.config(function($routeProvider,$locationProvider,$httpProvider) {
 app.controller('ngengTitle',function($scope, $location) {
   $scope.title = $location.path()
 })
+myApp.run(function($location, $rootScope) {
+  $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
+
+      if (current.hasOwnProperty('$$route')) {
+
+          $rootScope.title = current.$$route.title;
+      }
+  });
+});
