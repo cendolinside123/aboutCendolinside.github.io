@@ -9,4 +9,6 @@ app.config(function($routeProvider) {
     .when("/404", {
       templateUrl : "404.html"
     }).otherwise({redirectTo: '/404'});
+    $locationProvider.html5Mode(true)
+    $locationProvider.hashPrefix("!");
 });
