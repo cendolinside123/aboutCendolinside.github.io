@@ -17,17 +17,15 @@ app.config(function($routeProvider,$locationProvider,$httpProvider) {
 });
 app.controller('headerController',function($scope,$window,$location) {
   var screenWidth = $window.innerWidth;
-  $scope.includeDesktopTemplate = true;
+  $scope.includeDesktopTemplate = false;
   $scope.includeMobileTemplate = false;
   if (screenWidth < 700){
       $scope.includeMobileTemplate = true;
-      $scope.includeDesktopTemplate = false
   }else{
       $scope.includeDesktopTemplate = true;
-      $scope.includeMobileTemplate = false;
   }
 
-  $scope.update = function() {
+  $scope.updatePage = function() {
     if ($scope.selectPage == "/") {
       $location.path("/")
     } else if ($scope.selectPage == "AMe") {
