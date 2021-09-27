@@ -24,7 +24,7 @@ app.controller('headerController',function($scope,$window,$location) {
   }else{
       $scope.includeDesktopTemplate = true;
   }
-
+  $scope.selectPage = "/"
   $scope.updatePage = function(selectPage) {
     if (selectPage == "/") {
       $location.path("/")
