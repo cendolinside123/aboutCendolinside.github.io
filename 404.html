@@ -29,8 +29,8 @@
 </head>
 <body>
   <header ng-controller="headerController">
-    <div ng-if="includeDesktopTemplate"></div>[<a href="/">/</a> , <a href="AMe">/AMe</a>]</div>
-    <div  ng-if="includeMobileTemplate">
+    <div ng-if="includeDesktopTemplate == true"></div>[<a href="/">/</a> , <a href="AMe">/AMe</a>]</div>
+    <div  ng-if="includeMobileTemplate == true">
       <select ng-model="selectPage" ng-change="updatePage()"> 
         <option value="/">/ Home</option>
         <option value="AMe">/AMe/ About Me</option>
