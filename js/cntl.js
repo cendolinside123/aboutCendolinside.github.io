@@ -25,10 +25,10 @@ app.controller('headerController',function($scope,$window,$location) {
       $scope.includeDesktopTemplate = true;
   }
 
-  $scope.updatePage = function() {
-    if ($scope.selectPage == "/") {
+  $scope.updatePage = function(selectPage) {
+    if (selectPage == "/") {
       $location.path("/")
-    } else if ($scope.selectPage == "AMe") {
+    } else if (selectPage == "AMe") {
       $location.path("/AMe")
     } else {
       $location.path("/404")
