@@ -28,7 +28,15 @@
   </style>
 </head>
 <body>
-  <header><div>[<a href="/">/</a> , <a href="AMe">/AMe</a>]</div></header>
+  <header ng-controller="headerController">
+    <div ng-if="includeDesktopTemplate"></div>[<a href="/">/</a> , <a href="AMe">/AMe</a>]</div>
+    <div  ng-if="includeMobileTemplate">
+      <select ng-model="selectPage" ng-change="updatePage()"> 
+        <option value="/">/ Home</option>
+        <option value="AMe">/AMe/ About Me</option>
+      </select>
+    </div>
+  </header>
   <section>
     <div ng-view></div>
   </section>
