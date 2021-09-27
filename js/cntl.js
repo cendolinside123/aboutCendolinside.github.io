@@ -19,8 +19,7 @@ app.controller('headerController',function($scope,$window,$location) {
   var screenWidth = $window.innerWidth;
   $scope.includeDesktopTemplate = false;
   $scope.includeMobileTemplate = false;
-  if (screenWidth < 700){
-      $scope.includeDesktopTemplate = false;  
+  if (screenWidth < 700){  
       $scope.includeMobileTemplate = true;
   }else{
       $scope.includeDesktopTemplate = true;
