@@ -36,6 +36,7 @@ app.controller('headerController',function($scope,$window,$location) {
  }
 
 })
+app.controller('homeController',function($scope) {})
 // app.controller('ngengTitle',function($scope, $location) {
 //   $scope.title = $location.path()
 // })
