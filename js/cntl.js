@@ -24,7 +24,8 @@ app.controller('headerController',function($scope,$window,$location) {
   }else{
       $scope.includeDesktopTemplate = true;
   }
-  console.log("PATH:"+$window.location.pathname.substring(0, window.location.pathname.indexOf("/",2)));
+  console.log("PATH:"+$window.location.pathname);
+  console.log("LOCATION:"+$window.location);
   $scope.selectPage = "/"
   $scope.updatePage = function(selectPage) {
     if (selectPage == "/") {
