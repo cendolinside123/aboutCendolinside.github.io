@@ -26,7 +26,16 @@ app.controller('headerController',function($scope,$window,$location) {
   }
   console.log("PATH:"+$window.location.pathname);
   console.log("LOCATION:"+$window.location);
-  $scope.selectPage = "/"
+  // $scope.selectPage = "/"
+
+  if($window.location.pathname == "/") {
+    $scope.selectPage = "/"
+  } else if($window.location.pathname == "/AMe"){
+    $scope.selectPage == "AMe"
+  } else {
+    $scope.selectPage = "/"
+  }
+
   $scope.updatePage = function(selectPage) {
     if (selectPage == "/") {
       $location.path("/")
