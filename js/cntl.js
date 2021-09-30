@@ -24,8 +24,8 @@ app.controller('headerController',function($scope,$window,$location) {
   }else{
       $scope.includeDesktopTemplate = true;
   }
-  console.log("PATH:"+$window.location.pathname);
-  console.log("LOCATION:"+$window.location);
+  // console.log("PATH:"+$window.location.pathname);
+  // console.log("LOCATION:"+$window.location);
   // $scope.selectPage = "/"
 
   if($window.location.pathname == "/") {
