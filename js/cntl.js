@@ -31,7 +31,7 @@ app.controller('headerController',function($scope,$window,$location) {
   if($window.location.pathname == "/") {
     $scope.selectPage = "/"
   } else if($window.location.pathname == "/AMe"){
-    $scope.selectPage == "AMe"
+    $scope.selectPage = "AMe"
   } else {
     $scope.selectPage = "/"
   }
