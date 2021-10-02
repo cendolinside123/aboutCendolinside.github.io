@@ -47,7 +47,100 @@
   </section>
   <footer></footer>
   <script>
-    function myMove(){var t=document.body,e=document.documentElement,n=Math.max(t.scrollHeight,t.offsetHeight,e.clientHeight,e.scrollHeight,e.offsetHeight),e=Math.min(t.scrollWidth,t.offsetWidth,e.clientWidth,e.scrollWidth,e.offsetWidth);let o=null;const a=document.getElementById("a");var d=e-document.getElementById("a").offsetWidth,l=n-(document.getElementById("a").offsetWidth+Math.trunc(document.getElementById("animate2").offsetHeight+document.getElementById("animate2").offsetHeight/2));let m=0,r=document.getElementById("bar").offsetTop+document.getElementById("a").offsetWidth/2,f=0,s=!1;clearInterval(o),clearInterval(null),o=setInterval(function(){Math.trunc(m)<d&&r==document.getElementById("bar").offsetTop+document.getElementById("a").offsetWidth/2?(a.style.transform="rotate(0deg)",m++,a.style.left=m+"px"):Math.trunc(m)==d&&r<l?(r++,a.style.transform="rotate(90deg)",a.style.top=r+"px"):Math.trunc(r)==l&&0<Math.trunc(m)?(m--,a.style.transform="rotate(0deg) scaleX(-1)",a.style.left=m+"px"):0==Math.trunc(m)&&Math.trunc(r)<=l&&Math.trunc(r)>document.getElementById("bar").offsetTop+document.getElementById("a").offsetWidth/2?(r--,a.style.transform="rotate(-90deg) scaleX(1)",a.style.top=r+"px"):Math.trunc(m)<d&&Math.trunc(r)==document.getElementById("bar").offsetTop+document.getElementById("a").offsetWidth/2?(a.style.transform="rotate(0deg)",m++,a.style.left=m+"px"):clearInterval(o)},5),setInterval(function(){f++,s=0==s?(document.getElementById("animate").style.transform="rotate(-30deg)",document.getElementById("animate2").style.transform="rotate(30deg)",f%5==0):(document.getElementById("animate").style.transform="rotate(0deg)",document.getElementById("animate2").style.transform="rotate(0deg)",f,!1)},150)}document.getElementById("a").style.top=document.getElementById("bar").offsetTop+document.getElementById("a").offsetWidth/2+"px",myMove();
+    document.getElementById("a").style.top = document.getElementById("bar").offsetTop + (document.getElementById("a").offsetWidth/2) + "px";
+	myMove()
+	function myMove() {
+	
+		let body = document.body, html = document.documentElement;
+		let height = Math.max( body.scrollHeight, body.offsetHeight, 
+                       html.clientHeight, html.scrollHeight, html.offsetHeight )
+		let width = Math.min( body.scrollWidth, body.offsetWidth, 
+                       html.clientWidth, html.scrollWidth, html.offsetWidth )
+	
+		let id = null;
+		let id2 = null;
+		const elem = document.getElementById("a");
+		const maxWidth = width - document.getElementById("a").offsetWidth;
+		const maxHeigh = height - (document.getElementById("a").offsetWidth + Math.trunc(document.getElementById("animate2").offsetHeight + (document.getElementById("animate2").offsetHeight/2)));
+		let left = 0;
+		let top = document.getElementById("bar").offsetTop + (document.getElementById("a").offsetWidth/2);
+		let pos2 = 0;
+		let a = false
+		clearInterval(id);
+		clearInterval(id2)
+		id = setInterval(frame, 5);
+		id2 = setInterval(frame2, 150);
+		
+		let audio = new Audio('https://cendolinside123.github.io/audio/clapt2.mp3')
+		audio.loop = true
+
+		document.body.addEventListener("mousemove", function () {
+			audio.play();
+		});
+		document.body.addEventListener("touchstart", function () {
+			audio.play();
+		})
+		
+		function frame2() {
+			pos2++;
+
+			if (a == false) {
+				document.getElementById("animate").style.transform = "rotate(-30deg)";
+				document.getElementById("animate2").style.transform = "rotate(30deg)";
+				if(pos2%5 == 0) {
+					a = true;
+				} else {
+					a = false;
+				}
+			} else {
+				document.getElementById("animate").style.transform = "rotate(0deg)"
+				document.getElementById("animate2").style.transform = "rotate(0deg)"
+				if(pos2%5 == 0) {
+					a = false;
+				} else {
+					a = false
+				}
+			}
+		}
+		function frame() {
+			// console.log(document.getElementById("animate").offsetHeight)
+			/*if (pos == 350) {
+			//document.getElementById("animate").style.transform = "rotate(0deg)"
+				clearInterval(id);
+			} else {
+				pos++;
+				elem.style.top = pos + "px";
+				elem.style.left = pos + "px";
+			}*/
+			if (Math.trunc(left) < maxWidth && top == (document.getElementById("bar").offsetTop + (document.getElementById("a").offsetWidth/2))) {
+			  elem.style.transform = "rotate(0deg)"
+			  left++;
+			  elem.style.left = left + "px";
+			} else if (Math.trunc(left) == maxWidth && top < maxHeigh) {
+			  top++;
+			  elem.style.transform = "rotate(90deg)"
+			  // console.log(screen.height - document.getElementById("animate").offsetHeight)
+			  elem.style.top = top + "px";
+			} else if (Math.trunc(top) == maxHeigh && Math.trunc(left) > 0) {
+			  left--;
+			  elem.style.transform = "rotate(0deg) scaleX(-1)"
+			  elem.style.left = left + "px";
+			} else if (Math.trunc(left) == 0 && (Math.trunc(top) <= maxHeigh && Math.trunc(top) > (document.getElementById("bar").offsetTop + (document.getElementById("a").offsetWidth/2)))) {
+				top--;
+				elem.style.transform = "rotate(-90deg) scaleX(1)"
+				elem.style.top = top + "px";
+			} else  if (Math.trunc(left) < maxWidth && Math.trunc(top) == (document.getElementById("bar").offsetTop + (document.getElementById("a").offsetWidth/2))) {
+			  elem.style.transform = "rotate(0deg)"
+			  left++;
+			  elem.style.left = left + "px";
+			}
+			else {
+			  clearInterval(id);
+			  clearInterval(id2);
+			  move();
+			}
+		}
+	}
   </script>
 </body>
 </html>
